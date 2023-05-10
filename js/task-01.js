@@ -1,12 +1,15 @@
-const items = document.querySelectorAll('#categories .item');
-console.log(`Number of categories: ${items.length}`);
-items.forEach((item) => {
-    const title = item.querySelector('h2').textContent;
-    const element = item.querySelectorAll('li').length;
-    console.log('Category:', title);
-    console.log('Elements:', element);
-})
+const categories = document.querySelector('#categories');
+const items = Array.from(categories.children);
 
+console.log(`Number of categories: ${items.length}`);
+
+items.forEach((item) => {
+  const title = item.querySelector('h2').textContent;
+  const elementCount = item.querySelectorAll('li').length;
+
+  console.log(`Category: ${title}`);
+  console.log(`Elements: ${elementCount}`);
+});
 
 //Напиши скрипт, який:
 
